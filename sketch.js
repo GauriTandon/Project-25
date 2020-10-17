@@ -8,6 +8,7 @@ var ground;
 var paper;
 
 function preload() {
+	backImg = loadImage("Sprites/streetA.jpg")
 	dustbinImg = loadImage("Sprites/dustbingreen.png");
 }
 
@@ -27,10 +28,10 @@ function setup() {
 	//Create the Bodies Here.
 	dustbin = createSprite(750,570,150,30);
 	dustbin.addImage(dustbinImg);
-	dustbin.scale = 0.75;
+	dustbin.scale = 0.8;
 	dustbin1 = new Dustbin(750,660,150,30);
 	dustbin2 = new Dustbin(670,600,30,170);
-	dustbin3 = new Dustbin(830,600,30,150);
+	dustbin3 = new Dustbin(830,580,30,170);
 	paper = new Paper(100,500,20,20);
 	ground = new Ground(0,700,2000,20);
 	World.add(world,ground);
@@ -42,14 +43,13 @@ function setup() {
 
 function draw() {
   rectMode(CENTER);
-  background(250);
+  background(backImg);
   
   ground.display();
   dustbin1.display();
   dustbin2.display();
   dustbin3.display();
   paper.display();
-
 
   createEdgeSprites();
   drawSprites();
@@ -59,7 +59,7 @@ function draw() {
 function keyPressed() {
 
 	if (keyCode === UP_ARROW) {
-		Matter.Body.applyForce(paper.body,paper.body.position,{x:85,y:-67})		
+		Matter.Body.applyForce(paper.body,paper.body.position,{x:60,y:-90})		
 	}
 
 }
