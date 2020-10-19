@@ -8,7 +8,7 @@ var ground;
 var paper;
 
 function preload() {
-	backImg = loadImage("Sprites/streetA.jpg")
+	backImg = loadImage("Sprites/street.jpg")
 	dustbinImg = loadImage("Sprites/dustbingreen.png");
 }
 
